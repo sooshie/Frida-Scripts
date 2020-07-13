@@ -1,4 +1,4 @@
-# frida-process
+# process-hooker
  
 Tested on Windows 10 with Frida 12.10.4
 
