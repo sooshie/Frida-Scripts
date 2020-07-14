@@ -403,11 +403,10 @@ Interceptor.attach(ptrFtpPutFileW, {
 // FindFirstFileExA
 
 // FindNextFileA
-var ptrFtpPutFileW = Module.findExportByName("Wininet.dll", "FtpPutFileW");
-Interceptor.attach(ptrFtpPutFileW, {
+var ptrFindNextFileA = Module.findExportByName("Kernel32.dll", "FindNextFileA");
+Interceptor.attach(ptrFindNextFileA, {
     onEnter: function (args) {
-        debug(" FtpPutFileW() Called");
-        debug("   |-- Process ("+args[1].readAnsiString()+" -> "+args[2].readAnsiString()+")");
+        debug(" FindNextFileA() Called");
     },
     onLeave: function (retval) {
     }
@@ -457,9 +456,9 @@ Interceptor.attach(ptrGetExitCodeProcess, {
 
 // CreateProcessA
 var ptrCreateProcessA = Module.findExportByName("Kernel32.dll", "CreateProcessA");
-Interceptor.attach(ptrFtpPutFileW, {
+Interceptor.attach(ptrCreateProcessA, {
     onEnter: function (args) {
-        debug(" FtpPutFileW() Called");
+        debug(" CreateProcessA() Called");
         debug("   |-- Process ("+args[0].readAnsiString()+" "+args[1].readAnsiString()+")");
     },
     onLeave: function (retval) {
