@@ -17,3 +17,19 @@ pip install frida
 ```
  - Clone (or download) the frida-process repository.
 
+
+# shellcode-analysis
+ 
+No idea what I'm doing with this one. It doesn't work the way I want it to. You can use it,
+it's mostly worthless.
+
+   
+## Install & Setup 
+
+ - Install Python 3.x  
+ - Install the [Frida](https://pypi.python.org/pypi/frida) python bindings using pip 
+```
+pip install frida
+```
+ - Clone (or download) the shellcode-analysis repository.
+
